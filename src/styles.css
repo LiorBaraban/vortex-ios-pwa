@@ -3,4 +3,6 @@ body {
     -webkit-user-select: none;
     -webkit-tap-highlight-color: transparent;
     -webkit-touch-callout: none;
+
+    background-color: rgb(87, 146, 197)
  }
