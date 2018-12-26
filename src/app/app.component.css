@@ -1,3 +1,4 @@
+
 .rel{
     position: relative;
 }
@@ -10,9 +11,16 @@
 
 
 .vortex:hover{
-    background-color: yellow !important;
+    background-color: rgb(248, 75, 7) !important;
 }
 
 .vortex:active{
-    background-color: lightgreen !important;
+    background-color: rgb(16, 194, 16) !important;
+}
+
+
+.app-container{
+    background-color: rgb(110, 177, 240);
+    min-height: 100vh;
+    min-width: 100vh;
 }
