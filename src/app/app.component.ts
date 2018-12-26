@@ -7,14 +7,14 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'app';
-  down: boolean = false;
+  // down: boolean = false;
 
-  onMouseDown(event){
-    console.log('down');
-    this.down = true;
-  }
-  onMouseUp(event){
-    console.log('up');
-    this.down = false;
-  }
+  // onMouseDown(event){
+  //   console.log('down');
+  //   this.down = true;
+  // }
+  // onMouseUp(event){
+  //   console.log('up');
+  //   this.down = false;
+  // }
 }

@@ -10,5 +10,9 @@
 
 
 .vortex:hover{
-    background-color: yellow;
+    background-color: yellow !important;
+}
+
+.vortex:active{
+    background-color: lightgreen !important;
 }
