@@ -1,0 +1,23 @@
+{
+    "name": "SuperPWA",
+    "short_name": "SuperPWA",
+    "description": "Progressive Web Apps Plugin for WordPress",
+    "icons": [
+        {
+            "src": "https://superpwa.com/wp-content/uploads/2018/03/logo-192x192.png",
+            "sizes": "192x192",
+            "type": "image/png"
+        },
+        {
+            "src": "https://superpwa.com/wp-content/uploads/2018/03/logo-512x512.png",
+            "sizes": "512x512",
+            "type": "image/png"
+        }
+    ],
+    "background_color": "rgb(110, 177, 240)",
+    "theme_color": "rgb(110, 177, 240)",
+    "display": "standalone",
+    "orientation": "portrait",
+    "_start_url": "/?utm_source=superpwa&utm_medium=pwa",
+    "_scope": "/"
+}
