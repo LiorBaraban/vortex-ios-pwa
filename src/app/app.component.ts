@@ -11,8 +11,10 @@ export class AppComponent implements OnInit {
   NotchOrientation: NotchOrientation; // enum ref
 
   isNotch: boolean;
+  isIOS: boolean;
 
   notchOrientation: NotchOrientation;
+  screen: any
 
   title = 'app';
 
@@ -24,6 +26,8 @@ export class AppComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.isIOS = false;
+    this.isNotch = false;
     this.detectIos();
   }
 
@@ -33,25 +37,25 @@ export class AppComponent implements OnInit {
   detectIos() {
     // Really basic check for the ios platform
     // https://stackoverflow.com/questions/9038625/detect-if-device-is-ios
-    let iOS = /ipad|iphone|ipod/.test(navigator.userAgent.toLowerCase());
+    this.isIOS = /ipad|iphone|ipod/.test(navigator.userAgent.toLowerCase());
 
     // Get the device pixel ratio
     let devicePixelRatio = window.devicePixelRatio || 1;
 
     // Define the users device screen dimensions
-    let screen = {
+    this.screen = {
       width: window.screen.width * devicePixelRatio,
       height: window.screen.height * devicePixelRatio
     };
 
     // iPhone X Detection
-    if (iOS && this.isXModel()) {
+    if (this.isIOS && this.isXModel()) {
 
       // Set a global variable now we've determined the iPhoneX is true
       this.isNotch = true;
 
       // Adds a listener for ios devices that checks for orientation changes.
-      window.addEventListener('orientationchange', this.update);
+      window.addEventListener('orientationchange', this.update.bind(this));
       this.update();
     }
 
@@ -96,17 +100,17 @@ export class AppComponent implements OnInit {
 
   isXModel() {
     let isXModel = false;
-    if (screen.width === 1125 && screen.height === 2436
+    if (this.screen.width === 1125 && this.screen.height === 2436
       ||
-      screen.width === 2436 && screen.height === 1125
+      this.screen.width === 2436 && this.screen.height === 1125
       ||
-      screen.width === 1242 && screen.height === 2688
+      this.screen.width === 1242 && this.screen.height === 2688
       ||
-      screen.width === 2688 && screen.height === 1242
+      this.screen.width === 2688 && this.screen.height === 1242
       ||
-      screen.width === 828 && screen.height === 1792
+      this.screen.width === 828 && this.screen.height === 1792
       ||
-      screen.width === 1792 && screen.height === 828
+      this.screen.width === 1792 && this.screen.height === 828
     ) {
       isXModel = true;
     }
