@@ -23,6 +23,6 @@
     position: absolute;
     background-color: rgb(110, 177, 240);
     min-height: 100vh;
-    min-width: 100vh;
-    top: -20px;
+    min-width: 100vw;
+    /* top: -20px; */
 }
