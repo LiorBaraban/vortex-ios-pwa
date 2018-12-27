@@ -12,12 +12,22 @@
         <h1>{{this.isNotch}}</h1>
         <h1>Orientation</h1>
         <h1>{{this.notchOrientation}}</h1>
-        <button class="btn btn-lg btn-danger vortex">Test</button>
-        <form method="post" action="/" enctype="multipart/form-data">
-          <input type="text" name="thetext">
-          <input type="file" accept="image/*" name="thefile">
-          <button>Submit</button>
-        </form>
+        <div class="input-group mb-3">
+          <!-- <div class="input-group-prepend">
+            <span class="input-group-text">Upload</span>
+          </div> -->
+          <!-- <button class="btn btn-warning"> -->
+            <a class="btn btn-warning">
+              <span>Select File</span>
+              <input type="file" class="" id="inputGroupFile01" accept="image/*" name="thefile" (change)="this.fileInputChange($event)">
+            </a>
+            <!-- <label class="custom-file-label" for="inputGroupFile01">Choose file</label> -->
+          <!-- </button> -->
+        </div>
+        <button class="btn btn-lg btn-danger vortex" (click)="this.onClick()">Upload</button>
+        <div *ngIf="this.showImage">
+          <img [src]="this.imgSrc" width='350px' height="757px" alt="">
+        </div>
       </div>
     </div>
   </div>

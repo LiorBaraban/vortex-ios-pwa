@@ -47,3 +47,7 @@
 .notch-right{
     padding-right: 44px;
 }
+
+input[type='file'] {
+    opacity:0    
+  }

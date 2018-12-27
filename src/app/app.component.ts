@@ -12,9 +12,11 @@ export class AppComponent implements OnInit {
 
   isNotch: boolean;
   isIOS: boolean;
+  showImage: boolean;
 
   notchOrientation: NotchOrientation;
   screen: any
+  imgSrc: string;
 
   title = 'app';
 
@@ -28,6 +30,8 @@ export class AppComponent implements OnInit {
   ngOnInit(): void {
     this.isIOS = false;
     this.isNotch = false;
+    this.showImage = false;
+    
     this.detectIos();
   }
 
@@ -118,12 +122,27 @@ export class AppComponent implements OnInit {
   }
 
 
-  getNgClass(){
+  getNgClass() {
     return {
       'notch-top': this.isNotch && this.notchOrientation === NotchOrientation.top,
       'notch-right': this.isNotch && this.notchOrientation === NotchOrientation.right,
       'notch-left': this.isNotch && this.notchOrientation === NotchOrientation.left,
-      'regular-top' : !this.isNotch
+      'regular-top': !this.isNotch
+    }
+  }
+
+  onClick() {
+    this.showImage = !this.showImage;
+  }
+
+  fileInputChange(event) {
+
+    if (event.target.files && event.target.files[0]) {
+      let file = event.target.files[0];
+      const reader = new FileReader();
+
+      reader.onload = e => this.imgSrc = reader.result as string;
+      reader.readAsDataURL(file);
     }
   }
 
