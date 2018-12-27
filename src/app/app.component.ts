@@ -17,4 +17,10 @@ export class AppComponent {
   //   console.log('up');
   //   this.down = false;
   // }
+  getInnerHeight(){
+    return window.innerHeight;
+  }
+  getInnerWidth(){
+    return window.innerWidth;
+  }
 }
