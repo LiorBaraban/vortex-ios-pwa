@@ -116,9 +116,10 @@ export class AppComponent implements OnInit {
 
   getNgClass(){
     return {
-      'notch-top': this.notchOrientation === NotchOrientation.top,
-      'notch-right': this.notchOrientation === NotchOrientation.right,
-      'notch-left': this.notchOrientation === NotchOrientation.left
+      'notch-top': this.isNotch && this.notchOrientation === NotchOrientation.top,
+      'notch-right': this.isNotch && this.notchOrientation === NotchOrientation.right,
+      'notch-left': this.isNotch && this.notchOrientation === NotchOrientation.left,
+      'regular-top' : !this.isNotch
     }
   }
 

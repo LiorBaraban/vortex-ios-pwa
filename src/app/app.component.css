@@ -27,23 +27,23 @@
     /* top: -20px; */
 }
 
-.statubar{
-    height: 140px;
-}
-
 .application{
     margin-left: 20px;
     margin-right: 20px;
 }
 
+.regular-top{
+    padding-top: 20px;
+}
+
 .notch-top{
-    height: 44px;
+    padding-top: 44px;
 }
 
 .notch-left{
-    margin-left: 44px;
+    padding-left: 44px;
 }
 
 .notch-right{
-    margin-right: 44px;
+    padding-right: 44px;
 }
