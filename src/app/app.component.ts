@@ -133,6 +133,5 @@ export class AppComponent implements OnInit {
 enum NotchOrientation {
   top = 1,
   right = 2,
-  bottom = 3,
-  left = 4
+  left = 3
 }
