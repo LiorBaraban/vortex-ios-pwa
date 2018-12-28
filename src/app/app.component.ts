@@ -1,5 +1,6 @@
 import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -33,6 +34,8 @@ export class AppComponent implements OnInit {
     this.isStandalone = false;
     this.isNotch = false;
     this.showImage = false;
+    (<any>window).iNoBounce.enable();
+    
     
     this.detectIos();
   }
@@ -60,7 +63,8 @@ export class AppComponent implements OnInit {
       this.isNotch = true;
 
       if (this.isStandAlone()){
-        this.isStandalone = true
+        this.isStandalone = true;
+        (<any>window).iNoBounce.disable();
       }
 
       // Adds a listener for ios devices that checks for orientation changes.
@@ -157,6 +161,12 @@ export class AppComponent implements OnInit {
       reader.onload = e => this.imgSrc = reader.result as string;
       reader.readAsDataURL(file);
     }
+  }
+
+  isNoBounceEnabled(){
+    let isEnabled:boolean = (<any>window).iNoBounce.isEnabled();
+    
+    return isEnabled;
   }
 
 }
