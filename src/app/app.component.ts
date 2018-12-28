@@ -164,10 +164,8 @@ export class AppComponent implements OnInit {
   }
 
   isBounceDisabled(){
-    let isEnabled:boolean = (<any>window).iNoBounce.isEnabled();
-    let isDisabled = !isEnabled;
-    
-    return isDisabled;
+    let isBounceDisabled:boolean = (<any>window).iNoBounce.isEnabled();
+    return isBounceDisabled;
   }
 
 }
