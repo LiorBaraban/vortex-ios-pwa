@@ -3,9 +3,8 @@ body {
     -webkit-user-select: none;
     -webkit-tap-highlight-color: transparent;
     -webkit-touch-callout: none;
-    height: 100%;
-    width: 100%;
-    overflow: auto;
+    position: fixed;
+    overflow: hidden;
  }
 
 @-ms-viewport{

@@ -22,12 +22,15 @@
 .app-container{
     position: absolute;
     background-color: rgb(110, 177, 240);
-    min-height: 100vh;
-    min-width: 100vw;
+    width: 100vw;
+    height: 100vh;
+    overflow-y: scroll;
     /* top: -20px; */
 }
 
 .application{
+
+    -webkit-overflow-scrolling: touch;
     margin-left: 20px;
     margin-right: 20px;
 }
