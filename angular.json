@@ -27,7 +27,9 @@
               "src/styles.css",
               "src/assets/css/bootstrap.css"
             ],
-            "scripts": []
+            "scripts": [
+              "src/iNotBounce.js"
+            ]
           },
           "configurations": {
             "production": {
