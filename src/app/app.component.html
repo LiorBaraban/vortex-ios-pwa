@@ -3,28 +3,37 @@
     <div class="row">
       <div class="col-sm-12">
         <h1>Hello World</h1>
-        <h1>viewport:</h1>
-        <h1>{{getInnerHeight()}}</h1>
-        <h1>{{getInnerWidth()}}</h1>
-        <h1>is ios</h1>
-        <h1>{{this.isIOS}}</h1>
-        <h1>is x model</h1>
-        <h1>{{this.isNotch}}</h1>
-        <h1>Orientation</h1>
-        <h1>{{this.notchOrientation}}</h1>
-        <div class="input-group mb-3">
+        <h1>
+          <span>viewport: </span>
+          <span>{{getInnerHeight()}}</span>
+          <span>x</span>
+          <span>{{getInnerWidth()}}</span>
+        </h1>
+        <h1>
+          <span>is ios? </span>
+          <span>{{this.isIOS}}</span>
+        </h1>
+        <h1>
+          <span>is x model? </span>
+          <span>{{this.isNotch}}</span>
+        </h1>
+        <h1>
+          <span>Orientation? </span>
+          <span>{{this.notchOrientation != null ? this.notchOrientation : 0}}</span>
+        </h1>
+        <!-- <div class="input-group mb-3"> -->
           <!-- <div class="input-group-prepend">
             <span class="input-group-text">Upload</span>
           </div> -->
           <!-- <button class="btn btn-warning"> -->
           <input type="file" class="" id="inputGroupFile01" accept="image/*" name="thefile" (change)="this.fileInputChange($event)">
-          
+
           <!-- <label class="custom-file-label" for="inputGroupFile01">Choose file</label> -->
           <!-- </button> -->
-        </div>
+        <!-- </div> -->
         <button class="btn btn-lg btn-danger vortex" (click)="this.onClick()">Upload</button>
         <div *ngIf="this.showImage">
-          <img [src]="this.imgSrc" width='350px' height="757px" alt="">
+          <img [src]="this.imgSrc" [width]='this.getInnerWidth()*0.8' height="this.getInnerHeight()*0.8" alt="">
         </div>
       </div>
     </div>
