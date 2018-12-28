@@ -24,13 +24,13 @@
     background-color: rgb(110, 177, 240);
     min-width: 100vw;
     min-height: 100vh;
-    overflow-y: scroll;
+    /* overflow-y: scroll; */
     /* top: -20px; */
 }
 
 .application{
 
-    -webkit-overflow-scrolling: touch;
+    /* -webkit-overflow-scrolling: touch; */
     margin-left: 20px;
     margin-right: 20px;
 }
