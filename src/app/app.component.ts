@@ -34,7 +34,7 @@ export class AppComponent implements OnInit {
     this.isStandalone = false;
     this.isNotch = false;
     this.showImage = false;
-    (<any>window).iNoBounce.enable();
+    (<any>window).iNoBounce.disable();
     
     
     this.detectIos();
@@ -64,7 +64,7 @@ export class AppComponent implements OnInit {
 
       if (this.isStandAlone()){
         this.isStandalone = true;
-        (<any>window).iNoBounce.disable();
+        (<any>window).iNoBounce.enable();
       }
 
       // Adds a listener for ios devices that checks for orientation changes.
@@ -163,10 +163,11 @@ export class AppComponent implements OnInit {
     }
   }
 
-  isNoBounceEnabled(){
+  isBounceDisabled(){
     let isEnabled:boolean = (<any>window).iNoBounce.isEnabled();
+    let isDisabled = !isEnabled;
     
-    return isEnabled;
+    return isDisabled;
   }
 
 }
