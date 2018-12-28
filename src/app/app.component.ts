@@ -12,6 +12,7 @@ export class AppComponent implements OnInit {
 
   isNotch: boolean;
   isIOS: boolean;
+  isStandalone: boolean;
   showImage: boolean;
 
   notchOrientation: NotchOrientation;
@@ -29,6 +30,7 @@ export class AppComponent implements OnInit {
 
   ngOnInit(): void {
     this.isIOS = false;
+    this.isStandalone = false;
     this.isNotch = false;
     this.showImage = false;
     
@@ -53,10 +55,13 @@ export class AppComponent implements OnInit {
     };
 
     // iPhone X Detection
-    if (this.isIOS && this.isXModel()) {
-
+    if (this.isIOS && this.isXModel()){
       // Set a global variable now we've determined the iPhoneX is true
       this.isNotch = true;
+
+      if (this.isStandAlone()){
+        this.isStandalone = true
+      }
 
       // Adds a listener for ios devices that checks for orientation changes.
       window.addEventListener('orientationchange', this.update.bind(this));
@@ -67,6 +72,14 @@ export class AppComponent implements OnInit {
 
     // Notch position checker
 
+  }
+
+  isStandAlone(){
+    let isStandAlone:boolean = false;
+    if (("standalone" in window.navigator) && !(<any>window.navigator).standalone){
+      isStandAlone = true;
+    }
+    return isStandAlone;
   }
 
   update() {
@@ -124,7 +137,7 @@ export class AppComponent implements OnInit {
 
   getNgClass() {
     return {
-      'notch-top': this.isNotch && this.notchOrientation === NotchOrientation.top,
+      'notch-top': this.isNotch && this.isStandalone && this.notchOrientation === NotchOrientation.top,
       'notch-right': this.isNotch && this.notchOrientation === NotchOrientation.right,
       'notch-left': this.isNotch && this.notchOrientation === NotchOrientation.left,
       'regular-top': !this.isNotch || this.isNotch && this.notchOrientation === NotchOrientation.right || this.isNotch && this.notchOrientation === NotchOrientation.left
