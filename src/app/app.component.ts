@@ -127,7 +127,7 @@ export class AppComponent implements OnInit {
       'notch-top': this.isNotch && this.notchOrientation === NotchOrientation.top,
       'notch-right': this.isNotch && this.notchOrientation === NotchOrientation.right,
       'notch-left': this.isNotch && this.notchOrientation === NotchOrientation.left,
-      'regular-top': !this.isNotch
+      'regular-top': !this.isNotch || this.isNotch && this.notchOrientation === NotchOrientation.right || this.isNotch && this.notchOrientation === NotchOrientation.left
     }
   }
 
