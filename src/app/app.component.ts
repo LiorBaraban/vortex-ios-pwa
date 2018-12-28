@@ -76,7 +76,7 @@ export class AppComponent implements OnInit {
 
   isStandAlone(){
     let isStandAlone:boolean = false;
-    if (("standalone" in window.navigator) && !(<any>window.navigator).standalone){
+    if (("standalone" in window.navigator) && (<any>window.navigator).standalone){
       isStandAlone = true;
     }
     return isStandAlone;
