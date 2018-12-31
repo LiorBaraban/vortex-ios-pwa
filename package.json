@@ -5,10 +5,12 @@
     "ng": "ng",
     "start": "node server.js",
     "build": "ng build",
+    "build-prod": "ng build --prod",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "postinstall": "ng build --prod"
+    "postinstall": "ng build --prod",
+    "ng-serve": "ng serve --port 4100 -o"
   },
   "private": true,
   "dependencies": {
